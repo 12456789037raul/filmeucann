@@ -19,7 +19,11 @@ public class Filmeucan {
     public static void main(String[] args) {
         // TODO code application logic her
         
-        new FormPessoa();
+        
+        
+        
+        
+     //   new FormPessoa();
     }
     
 }
