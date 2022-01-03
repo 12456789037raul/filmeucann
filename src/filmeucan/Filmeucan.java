@@ -5,11 +5,10 @@
  */
 package filmeucan;
 
-import fileDatabase.Read;
 
 import java.io.IOException;
-import java.util.List;
 import models.Pessoa;
+import views.PessoaForm;
 
 /**
  *
@@ -30,7 +29,7 @@ public class Filmeucan {
     String path = "src/fileDatabase/pessoa.txt";
     //Write file = new Write(path, pessoa);
     //file.writeNow();
-    
+    /*
     Read readFile = new Read(path);
     List<GenericObject> listaObject = readFile.readNow();
     
@@ -39,7 +38,8 @@ public class Filmeucan {
         
         System.out.println(  listaObject.get(i) );
     }
-     //   new FormPessoa();
+*/
+      new PessoaForm();
     
      //Update updateFile = new Update(path, "update", "Raul programador javeiro");
      
