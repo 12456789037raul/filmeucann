@@ -25,15 +25,15 @@ public class Read {
     }
     
     public List<String> readNow(){
+        
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
-        int numberOfLines = 0;
+      
         List lista = new ArrayList<>();
         
         while(lerArquivo.hasNext()){
             String nomeNoArquivo = lerArquivo.nextLine();
             lista.add( nomeNoArquivo );
            
-            numberOfLines++;
         }
         return lista;
     }

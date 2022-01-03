@@ -39,6 +39,7 @@ public class Write {
               System.out.println(""+pathArquivo);
            
         }
+        
         Read elementos = new Read();
         List<String> lista = elementos.readNow();
         lista.add(information);
@@ -51,11 +52,6 @@ public class Write {
              write.write(dadoDaLista+""+MUDAR_LINHA);
             
         }
-        
-        
-        
-        
-       
         
         write.flush();
         write.close();

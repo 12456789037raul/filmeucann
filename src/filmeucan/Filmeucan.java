@@ -6,6 +6,7 @@
 package filmeucan;
 
 import fileDatabase.Read;
+import fileDatabase.Update;
 import fileDatabase.Write;
 
 import java.io.IOException;
@@ -23,12 +24,15 @@ public class Filmeucan {
         // TODO code application logic her
         
     String path = "src/fileDatabase/pessoa.txt";
-    Write file = new Write(path, "Vicente Simão");
-    file.writeNow();
-    Read readFile = new Read();
+   // Write file = new Write(path, "Vicente Simão");
+    // file.writeNow();
+    //Read readFile = new Read();
     
-    readFile.readNow();
+   // readFile.readNow();
      //   new FormPessoa();
     
+     Update updateFile = new Update(path, "update", "Raul programador javeiro");
+     
+     updateFile.updateNow();
     }
 }
