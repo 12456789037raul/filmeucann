@@ -8,6 +8,7 @@ package fileDatabase;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 /**
  *
@@ -38,10 +39,23 @@ public class Write {
               System.out.println(""+pathArquivo);
            
         }
+        Read elementos = new Read();
+        List<String> lista = elementos.readNow();
+        lista.add(information);
+        
         System.out.println("Entrou escreveu "+information);
         FileWriter write = new FileWriter(this.arquivo);
- 
-        write.append(information+""+MUDAR_LINHA);
+        
+        for( int i = 0; i <lista.size(); i++ ){
+            String dadoDaLista = lista.get(i);
+             write.write(dadoDaLista+""+MUDAR_LINHA);
+            
+        }
+        
+        
+        
+        
+       
         
         write.flush();
         write.close();
