@@ -5,7 +5,6 @@
  */
 package filmeucan;
 
-import GenericObject.GenericObject;
 import fileDatabase.Read;
 
 import java.io.IOException;

@@ -5,13 +5,13 @@
  */
  package fileBairro;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.Bairro;
 
 /**
  *
@@ -25,11 +25,11 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<GenericObject> readNow(){
+    public List<Bairro> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<GenericObject>();
+        List lista = new ArrayList<Bairro>();
         
         while(lerArquivo.hasNext()){
             Object nomeNoArquivo = lerArquivo.nextLine();

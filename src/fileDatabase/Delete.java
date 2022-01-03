@@ -5,7 +5,6 @@
  */
 package fileDatabase;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -18,7 +17,7 @@ import java.util.List;
  */
 public class Delete {
      private File arquivo;
-     private GenericObject information;
+     private Object information;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -26,7 +25,7 @@ public class Delete {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Delete(String path, GenericObject information){
+    public Delete(String path, Object information){
          this.information = information;
          this.path = path;
          this.arquivo = new File(path);
@@ -52,7 +51,7 @@ public class Delete {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Object> lista = elementos.readNow();
             lista.remove(posicaoElemento);
             
 
@@ -76,7 +75,7 @@ public class Delete {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( Object elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Object> lista = elementos.readNow();
         
         int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
