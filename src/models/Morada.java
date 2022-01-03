@@ -7,12 +7,10 @@ package models;
 
 /**
  *
- * @author vicente-jpro
+ * @author Raúl Coimbra
  */
-public class Provincia {
-    private int idprovincia;
-    private String provincia;
-    private int fk pais;
-    
-    
+public class Morada {
+    private int fk pessoa;
+    private int fk bairro;
+      
 }

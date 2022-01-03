@@ -5,14 +5,16 @@
  */
 package models;
 
+import java.time.LocalDate;
+
 /**
  *
- * @author vicente-jpro
+ * @author Raúl Coimbra
  */
-public class Provincia {
-    private int idprovincia;
-    private String provincia;
-    private int fk pais;
+public class Filme_Participante {
+    private LocalDate data_paticipação;
+    private String fk autor;
+    private int fk filme;
     
     
 }

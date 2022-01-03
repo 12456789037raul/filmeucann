@@ -7,12 +7,11 @@ package models;
 
 /**
  *
- * @author vicente-jpro
+ * @author Raúl Coimbra
  */
-public class Provincia {
-    private int idprovincia;
-    private String provincia;
-    private int fk pais;
+public class Pais {
+    private int id pais;
+    private String pais;
     
     
 }
