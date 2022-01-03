@@ -5,6 +5,7 @@
  */
 package filmeucan;
 
+import fileDatabase.Delete;
 import fileDatabase.Read;
 import fileDatabase.Update;
 import fileDatabase.Write;
@@ -31,8 +32,11 @@ public class Filmeucan {
    // readFile.readNow();
      //   new FormPessoa();
     
-     Update updateFile = new Update(path, "update", "Raul programador javeiro");
+     //Update updateFile = new Update(path, "update", "Raul programador javeiro");
      
-     updateFile.updateNow();
+     //updateFile.updateNow();
+     
+     Delete deleteFile = new Delete(path, "Raul programador");
+     deleteFile.deleteNow();
     }
 }
