@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package models;
+ 
+import java.time.LocalDate;
 
 /**
  *
- * @author vicente-jpro
+ * @author Raúl Coimbra
  */
-public class Provincia {
-    private int idprovincia;
-    private String provincia;
-    private int fk pais;
-    
-    
+public class Autor {
+    private int id autor;
+    private int fk pessoa;
+    private LocalDate data_cadastro;    
 }

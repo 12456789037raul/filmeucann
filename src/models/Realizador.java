@@ -7,12 +7,12 @@ package models;
 
 /**
  *
- * @author vicente-jpro
+ * @author Raúl Coimbra
  */
-public class Provincia {
-    private int idprovincia;
-    private String provincia;
-    private int fk pais;
-    
+import java.time.LocalDate;
+public class Realizador {
+    private int realizador;
+    private int pessoa;
+    private LocalDate cadatro; 
     
 }
