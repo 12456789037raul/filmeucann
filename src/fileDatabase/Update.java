@@ -5,6 +5,7 @@
  */
 package fileDatabase;
 
+import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -17,18 +18,19 @@ import java.util.List;
  */
 public class Update {
      private File arquivo;
-     private String oldInformation, newInformation;
-     
+     private GenericObject oldInformation, newInformation;
+     private String path;
      private final String MUDAR_LINHA = "\n";
      
     /**
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Update(String path, String oldInformation, String newInformation){
+    public Update(String path, GenericObject oldInformation, GenericObject newInformation){
          this.oldInformation = oldInformation;
          this.newInformation = newInformation;
-         this.arquivo = new File("src/fileDatabase/pessoa.txt");
+         this.path = path;
+         this.arquivo = new File(path);
      }
     
     public void updateNow() throws IOException{
@@ -44,14 +46,14 @@ public class Update {
         }
         
         
-        int posicaoElemento = existElemento( oldInformation );
+        int posicaoElemento = existElemento( oldInformation.toString() );
         if ( posicaoElemento == -1 )
         {
             System.out.println("Elemento não exite no ficheiro");
         }else{
                 // Elemento existente
-            Read elementos = new Read();
-            List<String> lista = elementos.readNow();
+            Read elementos = new Read(path);
+            List<GenericObject> lista = elementos.readNow();
             lista.set(posicaoElemento, newInformation);
             
 
@@ -59,7 +61,7 @@ public class Update {
 
             for( int i = 0; i <lista.size(); i++ ){
 
-                String dadoDaLista = lista.get(i);
+                String dadoDaLista = lista.get(i).toString();
                 write.write(dadoDaLista+""+MUDAR_LINHA);
 
               
@@ -76,10 +78,9 @@ public class Update {
   
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( String elemento) throws FileNotFoundException{
-        Read elementos = new Read();
-        List<String> lista = elementos.readNow();
+        Read elementos = new Read(path);
+        List<GenericObject> lista = elementos.readNow();
         
-        int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
         {
             

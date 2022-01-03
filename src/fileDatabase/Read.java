@@ -5,6 +5,7 @@
  */
 package fileDatabase;
 
+import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,21 +21,22 @@ public class Read {
     
     FileInputStream entradaArquivo;
 
-    public Read() throws FileNotFoundException {
-        this.entradaArquivo = new FileInputStream( new File("src/fileDatabase/pessoa.txt"));
+    public Read(String path) throws FileNotFoundException {
+        this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<String> readNow(){
+    public List<GenericObject> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<>();
+        List lista = new ArrayList<GenericObject>();
         
         while(lerArquivo.hasNext()){
-            String nomeNoArquivo = lerArquivo.nextLine();
+            Object nomeNoArquivo = lerArquivo.nextLine();
             lista.add( nomeNoArquivo );
            
         }
+        
         return lista;
     }
     

@@ -5,6 +5,7 @@
  */
 package fileDatabase;
 
+import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -17,17 +18,18 @@ import java.util.List;
  */
 public class Delete {
      private File arquivo;
-     private String information;
-     
+     private GenericObject information;
+     private String path;
      private final String MUDAR_LINHA = "\n";
      
     /**
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Delete(String path, String information){
+    public Delete(String path, GenericObject information){
          this.information = information;
-         this.arquivo = new File("src/fileDatabase/pessoa.txt");
+         this.path = path;
+         this.arquivo = new File(path);
      }
     
     public void deleteNow() throws IOException{
@@ -49,8 +51,8 @@ public class Delete {
             System.out.println("Elemento não exite no ficheiro");
         }else{
                 // Elemento existente
-            Read elementos = new Read();
-            List<String> lista = elementos.readNow();
+            Read elementos = new Read(path);
+            List<GenericObject> lista = elementos.readNow();
             lista.remove(posicaoElemento);
             
 
@@ -58,7 +60,7 @@ public class Delete {
 
             for( int i = 0; i <lista.size(); i++ ){
 
-                String dadoDaLista = lista.get(i);
+                String dadoDaLista = lista.get(i).toString();
                 write.write(dadoDaLista+""+MUDAR_LINHA);
 
             }
@@ -72,9 +74,9 @@ public class Delete {
     }      
   
     // Retorna  a posição de um elemento existente na lista
-    private int existElemento( String elemento) throws FileNotFoundException{
-        Read elementos = new Read();
-        List<String> lista = elementos.readNow();
+    private int existElemento( Object elemento) throws FileNotFoundException{
+        Read elementos = new Read(path);
+        List<GenericObject> lista = elementos.readNow();
         
         int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
@@ -82,7 +84,7 @@ public class Delete {
             
 
             String elementoLista = lista.get(i).toString();
-            if ( elementoLista.equalsIgnoreCase(elemento) ){
+            if ( elementoLista.equalsIgnoreCase(elemento.toString()) ){
                 return i;
              }
         }

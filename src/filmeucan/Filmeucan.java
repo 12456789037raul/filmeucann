@@ -5,12 +5,12 @@
  */
 package filmeucan;
 
-import fileDatabase.Delete;
+import GenericObject.GenericObject;
 import fileDatabase.Read;
-import fileDatabase.Update;
-import fileDatabase.Write;
 
 import java.io.IOException;
+import java.util.List;
+import models.Pessoa;
 
 /**
  *
@@ -23,20 +23,32 @@ public class Filmeucan {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic her
+     Pessoa pessoa = new Pessoa();
+     pessoa.setIdPessoa(2);
+     pessoa.setNome("Vicente Simão o grade Javeiro");
+        
         
     String path = "src/fileDatabase/pessoa.txt";
-   // Write file = new Write(path, "Vicente Simão");
-    // file.writeNow();
-    //Read readFile = new Read();
+    //Write file = new Write(path, pessoa);
+    //file.writeNow();
     
-   // readFile.readNow();
+    Read readFile = new Read(path);
+    List<GenericObject> listaObject = readFile.readNow();
+    
+    for (int i = 0; i < listaObject.size(); i++){
+       listaObject.get(i);
+        
+        System.out.println(  listaObject.get(i) );
+    }
      //   new FormPessoa();
     
      //Update updateFile = new Update(path, "update", "Raul programador javeiro");
      
      //updateFile.updateNow();
      
-     Delete deleteFile = new Delete(path, "Raul programador");
-     deleteFile.deleteNow();
+
+     
+   //  Delete deleteFile = new Delete(path, "update");
+     //deleteFile.deleteNow();
     }
 }

@@ -24,7 +24,7 @@ public class Pessoa {
     public Pessoa() {
     }
 
-    public Pessoa(int idPessoa, String nome, String bi, LocalDate data_nascimento, LocalDate data_cadastro, String Email, String telemovel, Sexo sexo) {
+    public Pessoa(int idPessoa, String nome, String bi, LocalDate data_nascimento, LocalDate data_cadastro, String Email, String telemovel) {
         this.idPessoa = idPessoa;
         this.nome = nome;
         this.bi = bi;
@@ -32,7 +32,7 @@ public class Pessoa {
         this.data_cadastro = data_cadastro;
         this.Email = Email;
         this.telemovel = telemovel;
-        this.sexo = sexo;
+   
     }
 
     
@@ -99,6 +99,11 @@ public class Pessoa {
 
     public void setSexo(Sexo sexo) {
         this.sexo = sexo;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "idPessoa=" + idPessoa + ", nome=" + nome + ", bi=" + bi + ", data_nascimento=" + data_nascimento + ", data_cadastro=" + data_cadastro + ", Email=" + Email + ", telemovel=" + telemovel + ", sexo=" + sexo + '}';
     }
     
     
