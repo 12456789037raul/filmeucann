@@ -5,6 +5,8 @@
  */
 package filmeucan;
 
+import interfaces.FormPessoa;
+
 /**
  *
  * @author Raúl Coimbra
@@ -16,7 +18,8 @@ public class Filmeucan {
      */
     public static void main(String[] args) {
         // TODO code application logic her
-        System.out.println("HELLO WORLD");
+        
+        new FormPessoa();
     }
     
 }
