@@ -10,7 +10,29 @@ package models;
  * @author Raúl Coimbra
  */
 class Sexo {
-    private int pk Sexo;
+    private int idSexo;
     private String nome_sexo;
+
+    public Sexo(int idSexo, String nome_sexo) {
+        this.idSexo = idSexo;
+        this.nome_sexo = nome_sexo;
+    }
+
+    public int getIdSexo() {
+        return idSexo;
+    }
+
+    public void setIdSexo(int idSexo) {
+        this.idSexo = idSexo;
+    }
+
+    public String getNome_sexo() {
+        return nome_sexo;
+    }
+
+    public void setNome_sexo(String nome_sexo) {
+        this.nome_sexo = nome_sexo;
+    }
+    
     
 }

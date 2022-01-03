@@ -9,8 +9,22 @@ package models;
  *
  * @author Raúl Coimbra
  */
-public class Morada {
-    private int fk pessoa;
-    private int fk bairro;
+public class Morada extends Bairro{
+    private Pessoa pessoa;
+
+    public Morada(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+    public Pessoa getPessoa() {
+        return pessoa;
+    }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+    
+    
+
       
 }

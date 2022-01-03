@@ -10,9 +10,31 @@ package models;
  * @author Raúl Coimbra
  */
 import java.time.LocalDate;
-public class Realizador {
-    private int realizador;
-    private int pessoa;
-    private LocalDate cadatro; 
+public class Realizador extends Pessoa{
+    private int idRealizador;
+    private LocalDate dataCadastro; 
+
+    public Realizador(int idRealizador, LocalDate dataCadastro) {
+        this.idRealizador = idRealizador;
+        this.dataCadastro = dataCadastro;
+    }
+
+    public int getIdRealizador() {
+        return idRealizador;
+    }
+
+    public void setIdRealizador(int idRealizador) {
+        this.idRealizador = idRealizador;
+    }
+
+    public LocalDate getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+    
+    
     
 }
