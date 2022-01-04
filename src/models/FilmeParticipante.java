@@ -35,6 +35,11 @@ public class FilmeParticipante extends Autor{
     public void setFilme(Filme filme) {
         this.filme = filme;
     }
+
+    @Override
+    public String toString() {
+        return "FilmeParticipante{" + "data_paticipa\u00e7\u00e3o=" + data_paticipação + ", filme=" + filme + '}';
+    }
     
     
 }

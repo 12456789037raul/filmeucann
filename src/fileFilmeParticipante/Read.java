@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.FilmeParticipante;
 
 /**
  *
@@ -31,8 +32,7 @@ public class Read {
         List lista = new ArrayList<FilmeParticipante>();
         
         while(lerArquivo.hasNext()){
-            Object nomeNoArquivo = lerArquivo.nextLine();
-            lista.add( nomeNoArquivo );
+            lista.add( lerArquivo.nextLine() );
            
         }
         
