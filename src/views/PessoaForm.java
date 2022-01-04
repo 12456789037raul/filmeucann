@@ -65,6 +65,7 @@ private String valores [] ={"Masculino","Feminino"};
             emailJT = new JTextField();
             dataCadastroJT = new JTextField();
             dataNascimentoJt = new JTextField();
+            idJT = new JTextField();
             biJT = new JTextField();
             loginJT  = new JTextField();
             salvarJB = new JButton("Salvar");
