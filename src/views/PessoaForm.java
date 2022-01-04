@@ -29,18 +29,17 @@ public class PessoaForm  extends JFrame {
    
     
 
-private JTextField nomeJT,paiJT,maeJT,dataNascJt,biJT,loginJT ;
+private JTextField nomeJT,emailJT,dataCadastroJT,dataNascimentoJt,biJT,loginJT ;
 private JButton salvarJB,limparJB,cancelarJB;
 private JCheckBox acessoCKB;
 private JRadioButton mRB,fRB;
 private JComboBox EstCivilCB ;
 private JPasswordField  passwordJPF;
 private JPanel p1,p2,p3,p4,p5,p6,p7;
-private String valores [] ={"Casado","Solteiro","Sei la"}; 
+private String valores [] ={"Masculino","Feminino"}; 
 
 
 
-    
     public PessoaForm()
     {
         super("Formulario Pessoa");
@@ -48,11 +47,6 @@ private String valores [] ={"Casado","Solteiro","Sei la"};
         inic();
              
                 
-        
-        
-  
-        
-        
         
         this.getContentPane().add(p1,BorderLayout.CENTER);
        this.getContentPane().add(p7,BorderLayout.SOUTH);
@@ -67,9 +61,9 @@ private String valores [] ={"Casado","Solteiro","Sei la"};
     {
 
             nomeJT = new JTextField();
-            paiJT = new JTextField();
-            maeJT = new JTextField();
-            dataNascJt = new JTextField();
+            emailJT = new JTextField();
+            dataCadastroJT = new JTextField();
+            dataNascimentoJt = new JTextField();
             biJT = new JTextField();
             loginJT  = new JTextField();
             salvarJB = new JButton("Salvar");
@@ -103,19 +97,19 @@ private String valores [] ={"Casado","Solteiro","Sei la"};
             p2.add(new JLabel("Nome"));
             p2.add(nomeJT);
             
-            p2.add(new JLabel("Pai"));
-            p2.add(paiJT);
+            p2.add(new JLabel("Email"));
+            p2.add(emailJT);
             
-            p2.add(new JLabel("Mãe"));
-            p2.add(maeJT);
+            p2.add(new JLabel("data de Cadastro"));
+            p2.add(dataCadastroJT);
             
             p2.add(new JLabel("Data Nascimento"));
-            p2.add(dataNascJt);
+            p2.add(dataNascimentoJt);
             
             p2.add(new JLabel("BI"));
             p2.add(biJT);
             
-            p2.add(new JLabel("Est.Civil"));
+            p2.add(new JLabel("Sexo"));
             p2.add(EstCivilCB);
             
             
