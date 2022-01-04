@@ -5,6 +5,7 @@
  */
 package fileRealizador;
 
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -52,7 +53,9 @@ public class Delete {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
+
             List<Realizador> lista = elementos.readNow();
+
             lista.remove(posicaoElemento);
             
 
@@ -76,8 +79,7 @@ public class Delete {
     private int existElemento( Object elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
         List<Realizador> lista = elementos.readNow();
-        
-        int posicao = 0;
+
         for ( int i = 0; i < lista.size(); i++ )
         {
             
