@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileMorada;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Morada;
 
 /**
  *
@@ -16,7 +17,7 @@ import java.util.List;
  */
 public class Write {
      private File arquivo;
-     private Object information;
+     private Morada information;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -24,7 +25,7 @@ public class Write {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Write(String path, Object information){
+    public Write(String path, Morada information){
          this.information = information;
          this.path = path;
          this.arquivo = new File(path);
@@ -43,7 +44,7 @@ public class Write {
         }
         
         Read elementos = new Read(path);
-        List<Object> lista = elementos.readNow();
+        List<Morada> lista = elementos.readNow();
         lista.add(information);
         
         System.out.println("Entrou escreveu "+information);

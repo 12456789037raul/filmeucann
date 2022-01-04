@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileMorada;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.Morada;
 
 /**
  *
@@ -24,11 +25,11 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<Object> readNow(){
+    public List<Morada> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<Object>();
+        List lista = new ArrayList<Morada>();
         
         while(lerArquivo.hasNext()){
             Object nomeNoArquivo = lerArquivo.nextLine();

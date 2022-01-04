@@ -1,4 +1,4 @@
-package interfaces;
+package views;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -25,7 +25,7 @@ import java.awt.GridBagLayout;
  *
  * @author fdelgado
  */
-public class FormPessoa  extends JFrame {
+public class FilmeForm  extends JFrame {
    
     
 
@@ -41,17 +41,12 @@ private String valores [] ={"Casado","Solteiro","Sei la"};
 
 
     
-    public FormPessoa()
+    public FilmeForm()
     {
         super("Formulario Pessoa");
         
         inic();
              
-                
-        
-        
-  
-        
         
         
         this.getContentPane().add(p1,BorderLayout.CENTER);

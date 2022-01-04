@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileMorada;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Morada;
 
 /**
  *
  * @author vicente-jpro
  */
-public class Delete {
+public class Update {
      private File arquivo;
-     private Object information;
+     private Morada oldInformation, newInformation;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -25,13 +26,14 @@ public class Delete {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Delete(String path, Object information){
-         this.information = information;
+    public Update(String path, Morada oldInformation, Morada newInformation){
+         this.oldInformation = oldInformation;
+         this.newInformation = newInformation;
          this.path = path;
          this.arquivo = new File(path);
      }
     
-    public void deleteNow() throws IOException{
+    public void updateNow() throws IOException{
         createFile();
     }
     // Cria um novo ficheiro
@@ -44,15 +46,15 @@ public class Delete {
         }
         
         
-        int posicaoElemento = existElemento( information );
+        int posicaoElemento = existElemento( oldInformation.toString() );
         if ( posicaoElemento == -1 )
         {
             System.out.println("Elemento não exite no ficheiro");
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<Object> lista = elementos.readNow();
-            lista.remove(posicaoElemento);
+            List<Morada> lista = elementos.readNow();
+            lista.set(posicaoElemento, newInformation);
             
 
             FileWriter write = new FileWriter(this.arquivo);
@@ -61,6 +63,8 @@ public class Delete {
 
                 String dadoDaLista = lista.get(i).toString();
                 write.write(dadoDaLista+""+MUDAR_LINHA);
+
+              
 
             }
             write.flush();
@@ -73,19 +77,20 @@ public class Delete {
     }      
   
     // Retorna  a posição de um elemento existente na lista
-    private int existElemento( Object elemento) throws FileNotFoundException{
+    private int existElemento( String elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<Object> lista = elementos.readNow();
+        List<Morada> lista = elementos.readNow();
         
-        int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
         {
             
 
             String elementoLista = lista.get(i).toString();
-            if ( elementoLista.equalsIgnoreCase(elemento.toString()) ){
+            if ( elementoLista.equalsIgnoreCase(elemento) ){
                 return i;
-             }
+                }
+            System.out.println("elemento antigo: "+elemento);
+            System.out.println("elemento antigo na lista: "+lista.get(i));
         }
         
         return -1;
