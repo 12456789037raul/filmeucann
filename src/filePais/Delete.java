@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package filePais;
 
 import GenericObject.GenericObject;
+import models.Pais;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Pais;
 
 /**
  *
@@ -18,7 +21,7 @@ import java.util.List;
  */
 public class Delete {
      private File arquivo;
-     private GenericObject information;
+     private Pais information;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -26,7 +29,7 @@ public class Delete {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Delete(String path, GenericObject information){
+    public Delete(String path, Pais information){
          this.information = information;
          this.path = path;
          this.arquivo = new File(path);

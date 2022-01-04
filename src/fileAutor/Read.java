@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileAutor;
 
 import GenericObject.GenericObject;
 import java.io.File;
@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.Autor;
 
 /**
  *
@@ -29,7 +30,7 @@ public class Read {
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<GenericObject>();
+        List lista = new ArrayList<Autor>();
         
         while(lerArquivo.hasNext()){
             Object nomeNoArquivo = lerArquivo.nextLine();

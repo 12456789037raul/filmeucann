@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileFilmeParticipante;
 
 import GenericObject.GenericObject;
 import java.io.File;
@@ -17,8 +17,8 @@ import java.util.List;
  * @author vicente-jpro
  */
 public class Delete {
-     private File arquivo;
-     private GenericObject information;
+     private String File arquivo;
+     private String FilmeParticipante information;
      private String path;
      private final String MUDAR_LINHA = "\n";
      

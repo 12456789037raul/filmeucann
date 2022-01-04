@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package filePais;
 
 import GenericObject.GenericObject;
 import java.io.File;
@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Pais;
 
 /**
  *
@@ -18,7 +19,7 @@ import java.util.List;
  */
 public class Update {
      private File arquivo;
-     private GenericObject oldInformation, newInformation;
+     private Pais oldInformation, newInformation;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -26,7 +27,7 @@ public class Update {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Update(String path, GenericObject oldInformation, GenericObject newInformation){
+    public Update(String path, Pais oldInformation, Pais newInformation){
          this.oldInformation = oldInformation;
          this.newInformation = newInformation;
          this.path = path;
