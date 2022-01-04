@@ -5,12 +5,12 @@
  */
 package fileGenero;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Genero;
 
 /**
  *
@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Update {
      private File arquivo;
-     private GenericObject oldInformation, newInformation;
+     private Genero oldInformation, newInformation;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -26,7 +26,7 @@ public class Update {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Update(String path, GenericObject oldInformation, GenericObject newInformation){
+    public Update(String path, Genero oldInformation, Genero newInformation){
          this.oldInformation = oldInformation;
          this.newInformation = newInformation;
          this.path = path;
@@ -53,7 +53,7 @@ public class Update {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Genero> lista = elementos.readNow();
             lista.set(posicaoElemento, newInformation);
             
 
@@ -79,7 +79,7 @@ public class Update {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( String elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Genero> lista = elementos.readNow();
         
         for ( int i = 0; i < lista.size(); i++ )
         {

@@ -5,7 +5,6 @@
  */
 package fileAutor;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -26,7 +25,7 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<GenericObject> readNow(){
+    public List<Autor> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       

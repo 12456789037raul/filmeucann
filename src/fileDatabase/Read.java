@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.Provincia;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<Object> readNow(){
+    public List<Provincia> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       

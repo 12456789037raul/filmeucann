@@ -3,15 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileProvincia;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import models.Provincia;
 
 /**
  *
@@ -25,11 +25,11 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<GenericObject> readNow(){
+    public List<Provincia> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<GenericObject>();
+        List lista = new ArrayList<Provincia>();
         
         while(lerArquivo.hasNext()){
             Object nomeNoArquivo = lerArquivo.nextLine();

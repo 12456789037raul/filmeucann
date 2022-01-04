@@ -5,7 +5,6 @@
  */
 package fileAutor;
 
-import GenericObject.GenericObject;
 import models.Autor;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -53,7 +52,7 @@ public class Delete {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Autor> lista = elementos.readNow();
             lista.remove(posicaoElemento);
             
 
@@ -77,7 +76,7 @@ public class Delete {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( Object elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Autor> lista = elementos.readNow();
         
         int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
