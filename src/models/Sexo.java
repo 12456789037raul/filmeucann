@@ -15,12 +15,22 @@ public class Sexo {
 
     public Sexo() {
     }
-
+ 
     
     public Sexo(int idSexo, String nome_sexo) {
         this.idSexo = idSexo;
         this.nome_sexo = nome_sexo;
     }
+      public Sexo(int idSexo) {
+        this.idSexo = idSexo;
+      
+    }
+
+      public Sexo( String nome_sexo) {
+      
+        this.nome_sexo = nome_sexo;
+    }
+
 
     public int getIdSexo() {
         return idSexo;

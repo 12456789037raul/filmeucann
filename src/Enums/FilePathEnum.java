@@ -11,20 +11,20 @@ package Enums;
  */
 public enum FilePathEnum {
     
-    MORADA("src/fileDatabase/pessoa.txt"),
-    BAIRRO("src/fileDatabase/pessoa.txt"),
-    MUNICIPIO("src/fileDatabase/pessoa.txt"),
-    PROVINCIA("src/fileDatabase/pessoa.txt"),
-    PAIS("src/fileDatabase/pessoa.txt"),
+    MORADA("src/files/morada.txt"),
+    BAIRRO("src/files/bairro.txt"),
+    MUNICIPIO("src/files/municipio.txt"),
+    PROVINCIA("src/files/provincia.txt"),
+    PAIS("src/files/pais.txt"),
     
-    FILME_PARTICIPANTE("src/fileDatabase/pessoa.txt"),
-    FILME("src/fileDatabase/pessoa.txt"),
-    AUTOR("src/fileDatabase/pessoa.txt"),
-    REALIZADOR("src/fileDatabase/pessoa.txt"),
-    GENERO("src/fileDatabase/pessoa.txt"),
+    FILME_PARTICIPANTE("src/files/filme_participante.txt"),
+    FILME("src/files/filme.txt"),
+    AUTOR("src/files/autor.txt"),
+    REALIZADOR("src/files/realizador.txt"),
+    GENERO("src/files/genero.txt"),
     
-    PESSOA("src/fileDatabase/pessoa.txt"),
-    SEXO("src/fileDatabase/pessoa.txt");
+    PESSOA("src/files/pessoa.txt"),
+    SEXO("src/files/sexo.txt");
     
     public final String pathName;
 

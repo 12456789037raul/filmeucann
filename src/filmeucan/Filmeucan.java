@@ -25,11 +25,11 @@ public class Filmeucan {
      pessoa.setIdPessoa(2);
      pessoa.setNome("Vicente Simão o grade Javeiro");
         
-        
+      /*   
     String path = "src/fileDatabase/pessoa.txt";
-    //Write file = new Write(path, pessoa);
-    //file.writeNow();
-    /*
+    Write file = new Write(path, pessoa);
+    file.writeNow();
+   
     Read readFile = new Read(path);
     List<GenericObject> listaObject = readFile.readNow();
     
@@ -39,7 +39,7 @@ public class Filmeucan {
         System.out.println(  listaObject.get(i) );
     }
 */
-      new PessoaForm();
+     new PessoaForm();
     
      //Update updateFile = new Update(path, "update", "Raul programador javeiro");
      

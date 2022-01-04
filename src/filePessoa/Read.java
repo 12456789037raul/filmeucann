@@ -32,8 +32,7 @@ public class Read {
         List lista = new ArrayList<Pessoa>();
         
         while(lerArquivo.hasNext()){
-            Object nomeNoArquivo = lerArquivo.nextLine();
-            lista.add( nomeNoArquivo );
+            lista.add( lerArquivo.next() );
            
         }
         

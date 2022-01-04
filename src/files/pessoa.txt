@@ -1,0 +1,2 @@
+Pessoa{idPessoa=12, nome=Raul, bi=sdfdsf3213, data_nascimento=2022-12-12, data_cadastro=2022-01-04, Email=raul@gmail.com, telemovel=23436456, sexo=null}
+Pessoa{idPessoa=12, nome=vicente, bi=12, data_nascimento=1999-12-12, data_cadastro=2022-01-04, Email=vicente@, telemovel=sdfdf432, sexo=null}

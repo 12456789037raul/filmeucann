@@ -4,6 +4,9 @@ package views;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Enums.FilePathEnum;
+import Enums.SexoEnum;
+import filePessoa.Write;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -17,7 +20,13 @@ import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import models.Pessoa;
+import models.Sexo;
 
 
 
@@ -29,15 +38,16 @@ import javax.swing.JOptionPane;
 public class PessoaForm  extends JFrame {
    
     
+ private Pessoa pessoa;
 
-private JTextField nomeJT,emailJT,dataCadastroJT,dataNascimentoJt,biJT,loginJT , idJT;
+private JTextField nomeJT,emailJT,dataCadastroJT,dataNascimentoJt,biJT,loginJT , idJT, telemovelJT;
 private JButton salvarJB,limparJB,cancelarJB;
 private JCheckBox acessoCKB;
 private JRadioButton mRB,fRB;
-private JComboBox EstCivilCB ;
+private JComboBox sexoCB ;
 private JPasswordField  passwordJPF;
 private JPanel p1,p2,p3,p4,p5,p6,p7;
-private String valores [] ={"Masculino","Feminino"}; 
+private String valores [] ={SexoEnum.MASCULINO.nome, SexoEnum.FEMININO.nome}; 
 
 
 
@@ -55,6 +65,7 @@ private String valores [] ={"Masculino","Feminino"};
         setSize(400, 400);
         setLocationRelativeTo(null);
         setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
         
     }
     
@@ -67,6 +78,7 @@ private String valores [] ={"Masculino","Feminino"};
             dataNascimentoJt = new JTextField();
             idJT = new JTextField();
             biJT = new JTextField();
+            telemovelJT = new JTextField();
             loginJT  = new JTextField();
             salvarJB = new JButton("Salvar");
             limparJB= new JButton("Limpar");
@@ -75,7 +87,7 @@ private String valores [] ={"Masculino","Feminino"};
             acessoCKB = new JCheckBox();
             mRB = new JRadioButton("Masculino");
             fRB = new JRadioButton("Femenino");
-            EstCivilCB = new JComboBox(valores) ;
+            sexoCB = new JComboBox(valores) ;
             passwordJPF = new JPasswordField();
             p1 = new JPanel();
             p2 = new JPanel();
@@ -91,7 +103,7 @@ private String valores [] ={"Masculino","Feminino"};
             p1.add(p3);
             
             
-            p2.setLayout(new GridLayout(8,2));
+            p2.setLayout(new GridLayout(9,2));
             
             p2.add(new JLabel("Dados Pessoais"));
             p2.add(new JLabel(""));
@@ -114,13 +126,15 @@ private String valores [] ={"Masculino","Feminino"};
             p2.add(new JLabel("BI"));
             p2.add(biJT);
             
+            p2.add(new JLabel("Telemovel"));
+            p2.add(telemovelJT);
+            
             p2.add(new JLabel("Sexo"));
-            p2.add(EstCivilCB);
+            p2.add(sexoCB);
             
             
             
                       
-           
            
             p7.setLayout(new GridLayout(1,3));
             p7.add(salvarJB);
@@ -129,8 +143,33 @@ private String valores [] ={"Masculino","Feminino"};
     
     
         salvarJB.addActionListener( (e) -> {
-            System.out.println("Hello word");
-            JOptionPane.showMessageDialog(null, "Hello", "Ação", JOptionPane.INFORMATION_MESSAGE);
+            //Pessoa(int idPessoa, String nome, String bi, LocalDate data_nascimento, LocalDate data_cadastro, String Email, String telemovel)
+            
+            int idPessoa = Integer.parseInt( idJT.getText().trim() );
+            LocalDate dataNascimento = LocalDate.parse ((CharSequence) dataNascimentoJt.getText().trim() );
+            this.pessoa = new Pessoa( 
+                    idPessoa , 
+                    nomeJT.getText().trim(), 
+                    biJT.getText().trim(), 
+                    dataNascimento, 
+                    LocalDate.now(), 
+                    emailJT.getText().trim(), 
+                    telemovelJT.getText().trim()
+            );
+            String nomeSexo = sexoCB.getSelectedItem().toString();
+            pessoa.setSexo( new Sexo( nomeSexo ) );
+            System.out.println(FilePathEnum.PESSOA.pathName);
+           
+                try {
+                     Write file = new Write( FilePathEnum.PESSOA.pathName, pessoa);
+                    file.writeNow();
+                     JOptionPane.showMessageDialog(null, "Dados salvo com sucesso", "Ação", JOptionPane.INFORMATION_MESSAGE);
+                } catch (IOException ex) {
+                     JOptionPane.showMessageDialog(null, "Erro ao salvar os dados", "Ação", JOptionPane.INFORMATION_MESSAGE);
+                    Logger.getLogger(PessoaForm.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            
+          
         });
     
     
