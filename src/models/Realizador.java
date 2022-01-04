@@ -10,6 +10,7 @@ package models;
  * @author Raúl Coimbra
  */
 import java.time.LocalDate;
+
 public class Realizador extends Pessoa{
     private int idRealizador;
     private LocalDate dataCadastro; 

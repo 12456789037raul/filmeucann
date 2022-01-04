@@ -60,8 +60,7 @@ public class Delete {
 
             for( int i = 0; i <lista.size(); i++ ){
 
-                String dadoDaLista = lista.get(i).toString();
-                write.write(dadoDaLista+""+MUDAR_LINHA);
+                write.write(lista.get(i).toString()+""+MUDAR_LINHA);
 
             }
             write.flush();

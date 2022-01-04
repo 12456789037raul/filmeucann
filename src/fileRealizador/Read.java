@@ -32,8 +32,8 @@ public class Read {
         List lista = new ArrayList<Realizador>();
         
         while(lerArquivo.hasNext()){
-            Realizador nomeNoArquivo = lerArquivo.nextLine();
-            lista.add( nomeNoArquivo );
+    
+            lista.add( lerArquivo.nextLine() );
            
         }
         

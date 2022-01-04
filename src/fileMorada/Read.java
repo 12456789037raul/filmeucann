@@ -32,8 +32,7 @@ public class Read {
         List lista = new ArrayList<Morada>();
         
         while(lerArquivo.hasNext()){
-            Object nomeNoArquivo = lerArquivo.nextLine();
-            lista.add( nomeNoArquivo );
+            lista.add( lerArquivo.nextLine() );
            
         }
         
