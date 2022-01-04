@@ -17,6 +17,7 @@ import java.awt.GridLayout;
 import java.awt.FlowLayout;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
+import javax.swing.JOptionPane;
 
 
 
@@ -29,7 +30,7 @@ public class PessoaForm  extends JFrame {
    
     
 
-private JTextField nomeJT,emailJT,dataCadastroJT,dataNascimentoJt,biJT,loginJT ;
+private JTextField nomeJT,emailJT,dataCadastroJT,dataNascimentoJt,biJT,loginJT , idJT;
 private JButton salvarJB,limparJB,cancelarJB;
 private JCheckBox acessoCKB;
 private JRadioButton mRB,fRB;
@@ -89,10 +90,13 @@ private String valores [] ={"Masculino","Feminino"};
             p1.add(p3);
             
             
-            p2.setLayout(new GridLayout(7,2));
+            p2.setLayout(new GridLayout(8,2));
             
             p2.add(new JLabel("Dados Pessoais"));
             p2.add(new JLabel(""));
+            
+            p2.add(new JLabel("Id"));
+            p2.add(idJT);
             
             p2.add(new JLabel("Nome"));
             p2.add(nomeJT);
@@ -123,7 +127,10 @@ private String valores [] ={"Masculino","Feminino"};
             p7.add(cancelarJB);
     
     
-        
+        salvarJB.addActionListener( (e) -> {
+            System.out.println("Hello word");
+            JOptionPane.showMessageDialog(null, "Hello", "Ação", JOptionPane.INFORMATION_MESSAGE);
+        });
     
     
     }
