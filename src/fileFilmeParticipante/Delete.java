@@ -21,6 +21,8 @@ public class Delete {
      private String FilmeParticipante information;
      private String path;
      private final String MUDAR_LINHA = "\n";
+    private final GenericObject information;
+    private final File arquivo;
      
     /**
      *
