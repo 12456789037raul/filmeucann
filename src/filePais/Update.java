@@ -5,7 +5,6 @@
  */
 package filePais;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -54,7 +53,7 @@ public class Update {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Pais> lista = elementos.readNow();
             lista.set(posicaoElemento, newInformation);
             
 
@@ -80,7 +79,7 @@ public class Update {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( String elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Pais> lista = elementos.readNow();
         
         for ( int i = 0; i < lista.size(); i++ )
         {

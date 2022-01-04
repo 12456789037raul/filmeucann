@@ -5,7 +5,6 @@
  */
 package filePais;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -45,15 +44,15 @@ public class Write {
         }
         
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Pais> lista = elementos.readNow();
         lista.add(information);
         
         System.out.println("Entrou escreveu "+information);
         FileWriter write = new FileWriter(this.arquivo);
         
         for( int i = 0; i <lista.size(); i++ ){
-            String dadoDaLista = lista.get(i).getObjectName().toString();
-             write.write(dadoDaLista+""+MUDAR_LINHA);
+            
+             write.write(lista.get(i)+""+MUDAR_LINHA);
             
         }
         

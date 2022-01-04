@@ -5,8 +5,6 @@
  */
 package filePais;
 
-import GenericObject.GenericObject;
-import models.Pais;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -55,7 +53,7 @@ public class Delete {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Pais> lista = elementos.readNow();
             lista.remove(posicaoElemento);
             
 
@@ -63,8 +61,7 @@ public class Delete {
 
             for( int i = 0; i <lista.size(); i++ ){
 
-                String dadoDaLista = lista.get(i).toString();
-                write.write(dadoDaLista+""+MUDAR_LINHA);
+                write.write(lista.get(i)+""+MUDAR_LINHA);
 
             }
             write.flush();
@@ -79,7 +76,7 @@ public class Delete {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( Object elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Pais> lista = elementos.readNow();
         
         int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )

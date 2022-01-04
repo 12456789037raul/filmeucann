@@ -5,7 +5,7 @@
  */
 package fileProvincia;
 
-import fileDatabase.Read;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

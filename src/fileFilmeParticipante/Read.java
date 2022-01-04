@@ -5,7 +5,6 @@
  */
 package fileFilmeParticipante;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -25,11 +24,11 @@ public class Read {
         this.entradaArquivo = new FileInputStream( new File(path));
     }
     
-    public List<GenericObject> readNow(){
+    public List<FilmeParticipante> readNow(){
         
         Scanner lerArquivo = new Scanner(entradaArquivo, "UTF-8");
       
-        List lista = new ArrayList<GenericObject>();
+        List lista = new ArrayList<FilmeParticipante>();
         
         while(lerArquivo.hasNext()){
             Object nomeNoArquivo = lerArquivo.nextLine();
