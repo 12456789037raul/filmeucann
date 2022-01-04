@@ -77,7 +77,7 @@ public class Delete {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( Object elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<Autor> lista = elementos.readNow();
+        List<GenericObject> lista = elementos.readNow();
         
         int posicao = 0;
         for ( int i = 0; i < lista.size(); i++ )
