@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fileDatabase;
+package fileSexo;
 
-import GenericObject.GenericObject;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import models.Sexo;
 
 /**
  *
@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Update {
      private File arquivo;
-     private GenericObject oldInformation, newInformation;
+     private Sexo oldInformation, newInformation;
      private String path;
      private final String MUDAR_LINHA = "\n";
      
@@ -26,7 +26,7 @@ public class Update {
      *
      * @param path src/fileDatabase/nomeDoFicheiro.txt
      */
-    public Update(String path, GenericObject oldInformation, GenericObject newInformation){
+    public Update(String path, Sexo oldInformation, Sexo newInformation){
          this.oldInformation = oldInformation;
          this.newInformation = newInformation;
          this.path = path;
@@ -53,7 +53,7 @@ public class Update {
         }else{
                 // Elemento existente
             Read elementos = new Read(path);
-            List<GenericObject> lista = elementos.readNow();
+            List<Sexo> lista = elementos.readNow();
             lista.set(posicaoElemento, newInformation);
             
 
@@ -79,7 +79,7 @@ public class Update {
     // Retorna  a posição de um elemento existente na lista
     private int existElemento( String elemento) throws FileNotFoundException{
         Read elementos = new Read(path);
-        List<GenericObject> lista = elementos.readNow();
+        List<Sexo> lista = elementos.readNow();
         
         for ( int i = 0; i < lista.size(); i++ )
         {

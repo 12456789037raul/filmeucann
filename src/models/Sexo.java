@@ -9,10 +9,14 @@ package models;
  *
  * @author Raúl Coimbra
  */
-class Sexo {
+public class Sexo {
     private int idSexo;
     private String nome_sexo;
 
+    public Sexo() {
+    }
+
+    
     public Sexo(int idSexo, String nome_sexo) {
         this.idSexo = idSexo;
         this.nome_sexo = nome_sexo;
