@@ -6,9 +6,12 @@
 package filmeucan;
 
 
+import Enums.FilePathEnum;
+import filePessoa.Read;
 import java.io.IOException;
+import java.util.List;
 import models.Pessoa;
-import views.PessoaForm;
+import views.ReadJframe;
 
 /**
  *
@@ -29,17 +32,23 @@ public class Filmeucan {
     String path = "src/fileDatabase/pessoa.txt";
     Write file = new Write(path, pessoa);
     file.writeNow();
-   
-    Read readFile = new Read(path);
-    List<GenericObject> listaObject = readFile.readNow();
+   */
+    Read readFile = new Read(FilePathEnum.PESSOA.pathName);
+    List<Pessoa> listaPessoa = readFile.readNow();
     
-    for (int i = 0; i < listaObject.size(); i++){
-       listaObject.get(i);
+    
+    new ReadJframe(listaPessoa);
+    
+    for (int i = 0; i < listaPessoa.size(); i++){
+       listaPessoa.get(i);
         
-        System.out.println(  listaObject.get(i) );
+        System.out.println(  listaPessoa.get(i) );
     }
-*/
-     new PessoaForm();
+
+    
+     //new PessoaForm();
+     
+       
     
      //Update updateFile = new Update(path, "update", "Raul programador javeiro");
      
